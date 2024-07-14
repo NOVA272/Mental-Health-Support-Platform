@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-image: url('img1.jpg'); /* Replace with your image */
+            background-size: cover;
+            color: white;
+            font-family: 'Georgia', serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-family: 'Courier New', monospace;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            font-family: 'Tahoma', sans-serif;
+            font-size: 1.5em;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mental Health Quiz</h1>
+        <h3>Identify Potential Concerns</h3>
+    </header>
+    <div class="container">
+        <h2>Welcome to the Mental Health Quiz</h2>
+        <p>Answer the following questions to the best of your ability. This quiz is designed to help identify potential mental health concerns. Please note that this is not a diagnostic tool and should not replace professional advice.</p>
+        <form id="quizForm">
+            <div class="question">
+                <h3>1. How often do you feel sad or depressed?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> Rarely</label>
+                    <label><input type="radio" name="q1" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q1" value="c"> Often</label>
+                    <label><input type="radio" name="q1" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>2. Do you experience excessive worry or anxiety?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> Rarely</label>
+                    <label><input type="radio" name="q2" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q2" value="c"> Often</label>
+                    <label><input type="radio" name="q2" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>3. How often do you have trouble sleeping?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> Rarely</label>
+                    <label><input type="radio" name="q3" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q3" value="c"> Often</label>
+                    <label><input type="radio" name="q3" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>4. Do you experience mood swings?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> Rarely</label>
+                    <label><input type="radio" name="q4" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q4" value="c"> Often</label>
+                    <label><input type="radio" name="q4" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>5. How often do you feel overwhelmed by stress?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> Rarely</label>
+                    <label><input type="radio" name="q5" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q5" value="c"> Often</label>
+                    <label><input type="radio" name="q5" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>6. Do you have difficulty concentrating?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> Rarely</label>
+                    <label><input type="radio" name="q6" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q6" value="c"> Often</label>
+                    <label><input type="radio" name="q6" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>7. How often do you feel irritable or angry?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> Rarely</label>
+                    <label><input type="radio" name="q7" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q7" value="c"> Often</label>
+                    <label><input type="radio" name="q7" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>8. Do you experience panic attacks?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> Rarely</label>
+                    <label><input type="radio" name="q8" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q8" value="c"> Often</label>
+                    <label><input type="radio" name="q8" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>9. How often do you feel disconnected from reality?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> Rarely</label>
+                    <label><input type="radio" name="q9" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q9" value="c"> Often</label>
+                    <label><input type="radio" name="q9" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>10. Do you have intrusive thoughts that you can't control?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> Rarely</label>
+                    <label><input type="radio" name="q10" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q10" value="c"> Often</label>
+                    <label><input type="radio" name="q10" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>11. How often do you feel hopeless or worthless?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"> Rarely</label>
+                    <label><input type="radio" name="q11" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q11" value="c"> Often</label>
+                    <label><input type="radio" name="q11" value="d"> Almost always</label>
+                </div>
+            </div>
+           <div class="question">
+                <h3>12. Do you avoid social situations due to fear or anxiety?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"> Rarely</label>
+                    <label><input type="radio" name="q12" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q12" value="c"> Often</label>
+                    <label><input type="radio" name="q12" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>13. How often do you feel excessively tired or fatigued?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a"> Rarely</label>
+                    <label><input type="radio" name="q13" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q13" value="c"> Often</label>
+                    <label><input type="radio" name="q13" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>14. Do you have difficulty controlling your impulses?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a"> Rarely</label>
+                    <label><input type="radio" name="q14" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q14" value="c"> Often</label>
+                    <label><input type="radio" name="q14" value="d"> Almost always</label>
+                </div>
+            </div>
+            <div class="question">
+                <h3>15. How often do you feel detached from your surroundings?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a"> Rarely</label>
+                    <label><input type="radio" name="q15" value="b"> Sometimes</label>
+                    <label><input type="radio" name="q15" value="c"> Often</label>
+                    <label><input type="radio" name="q15" value="d"> Almost always</label>
+                </div>
+            </div>
+            <button type="button" class="button" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        function submitQuiz() {
+            var scores = {
+                depression: 0,
+                anxiety: 0,
+                bipolar: 0,
+                ptsd: 0,
+                ocd: 0
+            };
+            var totalQuestions = 15;
+            var answers = [
+                {q: 'q1', type: 'depression'},
+                {q: 'q2', type: 'anxiety'},
+                {q: 'q3', type: 'anxiety'},
+                {q: 'q4', type: 'bipolar'},
+                {q: 'q5', type: 'anxiety'},
+                {q: 'q6', type: 'depression'},
+                {q: 'q7', type: 'bipolar'},
+                {q: 'q8', type: 'ptsd'},
+                {q: 'q9', type: 'ptsd'},
+                {q: 'q10', type: 'ocd'},
+                {q: 'q11', type: 'depression'},
+                {q: 'q12', type: 'anxiety'},
+                {q: 'q13', type: 'depression'},
+                {q: 'q14', type: 'ocd'},
+                {q: 'q15', type: 'ptsd'}
+            ];
+
+            for (var i = 0; i < answers.length; i++) {
+                var radios = document.getElementsByName(answers[i].q);
+                for (var j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        if (radios[j].value === 'c' || radios[j].value === 'd') {
+                            scores[answers[i].type]++;
+                        }
+                    }
+                }
+            }
+
+            var result = document.getElementById('result');
+            result.style.display = 'block';
+
+            var maxScore = Math.max(scores.depression, scores.anxiety, scores.bipolar, scores.ptsd, scores.ocd);
+            var disorder = Object.keys(scores).find(key => scores[key] === maxScore);
+
+            switch (disorder) {
+                case 'depression':
+                    result.innerHTML = 'Your responses indicate that you may be experiencing symptoms of depression. Consider seeking professional advice for a proper diagnosis and support.';
+                    break;
+                case 'anxiety':
+                    result.innerHTML = 'Your responses indicate that you may be experiencing symptoms of anxiety. Consider seeking professional advice for a proper diagnosis and support.';
+                    break;
+                case 'bipolar':
+                    result.innerHTML = 'Your responses indicate that you may be experiencing symptoms of bipolar disorder. Consider seeking professional advice for a proper diagnosis and support.';
+                    break;
+                case 'ptsd':
+                    result.innerHTML = 'Your responses indicate that you may be experiencing symptoms of PTSD. Consider seeking professional advice for a proper diagnosis and support.';
+                    break;
+                case 'ocd':
+                    result.innerHTML = 'Your responses indicate that you may be experiencing symptoms of OCD. Consider seeking professional advice for a proper diagnosis and support.';
+                    break;
+                default:
+                    result.innerHTML = 'Your responses do not strongly indicate any specific mental health disorder. Consider seeking professional advice if you have concerns.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
